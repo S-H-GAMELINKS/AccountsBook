@@ -15,10 +15,10 @@ export default {
         }
     },
     mounted: function() {
-        this.getTopics();
+        this.getAccountsBook();
     },
     methods: {
-        getTopics: function() {
+        getAccountsBook: function() {
             axios.get('api/accounts').then((response) => {
                 console.log(response.data);
                 for(var i = 0; i < response.data.length; i++){
