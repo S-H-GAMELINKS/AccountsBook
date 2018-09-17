@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'accounts#index'
+
   resources :accounts
 
   namespace :api, format: 'json' do
