@@ -28,15 +28,9 @@ class Api::AccountsController < ActionController::API
     # POST /accounts
     # POST /accounts.json
     def create
-      @account = Account.new(account_params)
-  
-        if @account.save
-            format.html { redirect_to @account, notice: 'Account was successfully created.' }
-            format.json { render :show, status: :created, location: @account }
-        else
-            format.html { render :new }
-            format.json { render json: @account.errors, status: :unprocessable_entity }
-        end
+        @account = Account.new(account_params)
+        @account.save
+        render json: @account
     end
   
     # PATCH/PUT /accounts/1
