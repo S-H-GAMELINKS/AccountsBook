@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @account.date %>
+</p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @account.money %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @account.category %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @account.about %>
+</p>
+
+<p>
+  <strong>Income:</strong>
+  <%= @account.income %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>
