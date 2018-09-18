@@ -24,7 +24,12 @@
             <option :value="ca.name">{{ca.name}}</option>
         </select>
     </div>
-    <date-picker v-model="date" :config="options"></date-picker>
+    <div class="input-group">
+        <div class="input-group-append">
+            <span class="input-group-text">日付</span>
+        </div>
+        <date-picker v-model="date" :config="options"></date-picker>
+    </div>
     <div class="input-group">
         <div class="input-group-append">
             <span class="input-group-text">摘要</span>
@@ -93,7 +98,7 @@ export default {
                 this.income = false;
 
                 vue.$forceUpdate();
-                
+
             }, (error) => {
                 console.log(error);
             });
