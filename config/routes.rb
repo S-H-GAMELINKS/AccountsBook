@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'accounts#index'
   get '/about',   to: 'accounts#index'
   get '/contact',   to: 'accounts#index'
+  get '/category', to: 'accounts#index'
 
   resources :accounts
   resources :categories
