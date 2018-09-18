@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Accounts</h1>
-
 <div id="accountsbook">
-  <accountsbook-index/>
+  <header-navbar/>
+  <div class="container">
+    <router-view/>
+  </div>
 </div>
 
 <%= javascript_pack_tag 'accountsbook' %>

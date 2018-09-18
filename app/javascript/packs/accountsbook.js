@@ -1,9 +1,11 @@
 import Vue from 'vue/dist/vue.esm'
-import Index from './components/AccountBook/index.vue'
+import Router from './router/router'
+import Header from './components/Header.vue'
 
 const accountbook = new Vue({
+    router: Router,
     el: "#accountsbook",
     components: {
-        'accountsbook-index': Index,
+        'header-navbar': Header,
     }
 })
