@@ -7,10 +7,15 @@
         <div class="input-group-append">
             <span class="input-group-text">￥</span>
         </div>
-        <input type="text" class="form-control" v-model="money" placeholder="金額を入力してください">
+        <input type="text" class="form-control" v-model="money" placeholder="金額を入力してください"> 
+    </div>
+    <div class="input-group">
+        <div class="input-group-append">
+            <span class="input-group-text">摘要</span>
+        </div>
+        <input type="text" class="form-control" v-model="about" placeholder="摘要を入力してください"> 
     </div>
     <p>
-        <input v-model="about" class="form-control" placeholder="摘要を入力してください">
         <button type="button" class="btn btn-primary" v-on:click="postAccountsBook">button</button>
     </p>
 </div>
