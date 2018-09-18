@@ -71,7 +71,7 @@ export default {
             },
             incomes: 0,
             payments: 0,
-            query: '2018/08'
+            query: moment(new Date()).format('YYYY/MM')
         }
     },
     created: function () {
@@ -135,7 +135,7 @@ export default {
                         }
                     }
                 }
-                console.log(payments);
+                console.log(this.payments);
                 this.$forceUpdate();
             }, (error) => {
                 console.log(error);
