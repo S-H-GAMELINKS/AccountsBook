@@ -80,6 +80,8 @@ export default {
                 this.money = '';
                 this.about = '';
                 this.category = '';
+                this.date = null;
+                this.income = false;
             }, (error) => {
                 console.log(error);
             });
