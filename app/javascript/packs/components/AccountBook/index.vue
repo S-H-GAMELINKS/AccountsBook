@@ -78,7 +78,7 @@ export default {
         this.getAccountsBook();
         this.getCategories();
     },
-    mounted: function() {
+    updated: function() {
         this.sumAccounts();
     },
     methods: {
@@ -107,7 +107,7 @@ export default {
                 this.date = null;
                 this.income = false;
 
-                vue.$forceUpdate();
+                this.$forceUpdate();
 
             }, (error) => {
                 console.log(error);
@@ -136,7 +136,7 @@ export default {
                     }
                 }
                 console.log(payments);
-                vue.$forceUpdate();
+                this.$forceUpdate();
             }, (error) => {
                 console.log(error);
             });
