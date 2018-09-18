@@ -10,6 +10,17 @@
         <input type="text" class="form-control" v-model="money" placeholder="金額を入力してください"> 
     </div>
     <div class="input-group">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">分類</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="input-group">
         <div class="input-group-append">
             <span class="input-group-text">摘要</span>
         </div>
