@@ -78,7 +78,7 @@ export default {
         this.getAccountsBook();
         this.getCategories();
     },
-    updated: function() {
+    mounted: function() {
         this.sumAccounts();
     },
     methods: {
@@ -124,7 +124,7 @@ export default {
         },
         sumAccounts: function() {
             axios.get('api/accounts').then((response) => {
-                console.log(moment(response.data[i].date).format('YYYY/MM'));
+                console.log(response.data);
                 console.log(this.query)
                 for(var i = 0; i < response.data.length; i++){
                     if(moment(response.data[i].date).format('YYYY/MM') === this.query) {
