@@ -1,24 +1,14 @@
-# README
+# AccountBook
+##　概要
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PWAかつSPAな家計簿アプリ。
 
-Things you may want to cover:
+フロントエンドをVue.js、バックエンドをRuby on Railsにて制作。
 
-* Ruby version
+# ライブラリ
 
-* System dependencies
+[Bootstrap-umi](https://github.com/ysakasin/Umi)
 
-* Configuration
+[vue-bootstrap-datetimepicker](https://github.com/ankurk91/vue-bootstrap-datetimepicker)
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
