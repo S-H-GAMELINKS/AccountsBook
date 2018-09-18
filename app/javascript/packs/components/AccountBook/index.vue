@@ -4,8 +4,8 @@
         {{ab.money}}
     </p>
     <p>
-        <input v-model="money" class="form-control" placeholder="Add your money!!">
-        <input v-model="about" class="form-control" placeholder="Add your about!!">
+        <input v-model="money" class="form-control" placeholder="金額を入力してください">
+        <input v-model="about" class="form-control" placeholder="摘要を入力してください">
         <button type="button" class="btn btn-primary" v-on:click="postAccountsBook">button</button>
     </p>
 </div>
