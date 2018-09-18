@@ -5,6 +5,7 @@
             <span class="input-group-text">絞り込み日付</span>
         </div>
         <vue-monthly-picker v-model="query"></vue-monthly-picker>
+        <button type="button" class="btn btn-primary" v-on:click="sumAccounts">絞り込み</button>
     </div>
     <p>支出：{{payments}}</p>
     <p>収入：{{incomes}}</p>
@@ -50,6 +51,7 @@
 
 <script>
 import axios from 'axios';
+import moment from 'moment';
 import datePicker from 'vue-bootstrap-datetimepicker';
 import VueMonthlyPicker from 'vue-monthly-picker'
 
@@ -69,7 +71,7 @@ export default {
             },
             incomes: 0,
             payments: 0,
-            query: null,
+            query: '2018/08'
         }
     },
     created: function () {
@@ -122,17 +124,26 @@ export default {
         },
         sumAccounts: function() {
             axios.get('api/accounts').then((response) => {
+                console.log(moment(response.data[i].date).format('YYYY/MM'));
+                console.log(this.query)
                 for(var i = 0; i < response.data.length; i++){
-                    if(response.data[i].income === true){
-                        this.incomes += response.data[i].money;
-                    } else {
-                        this.payments += response.data[i].money;
+                    if(moment(response.data[i].date).format('YYYY/MM') === this.query) {
+                        if(response.data[i].income === true){
+                            this.incomes += response.data[i].money;
+                        } else {
+                            this.payments += response.data[i].money;
+                        }
                     }
                 }
+                console.log(payments);
+                vue.$forceUpdate();
             }, (error) => {
                 console.log(error);
             });
         },
+        log: function() {
+            console.log(this);
+        }
     },
     components: {
         datePicker,
