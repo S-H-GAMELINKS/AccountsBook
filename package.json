@@ -7,6 +7,7 @@
     "bootstrap-umi": "^4.0.0",
     "jquery": "^3.3.1",
     "vue": "^2.5.17",
+    "vue-bootstrap-datetimepicker": "^5.0.1",
     "vue-loader": "14.2.2",
     "vue-template-compiler": "^2.5.17"
   },
