@@ -13,11 +13,9 @@
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">分類</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
+        <select class="custom-select" id="inputGroupSelect01" v-for="(ca, key, index) in categories" :key=index>
             <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option :value="ca.name">{{ca.name}}</option>
         </select>
     </div>
     <div class="input-group">
@@ -39,11 +37,13 @@ export default {
         return {
             accountbooks: [],
             money: "",
-            about: ""
+            about: "",
+            categories: []
         }
     },
     mounted: function() {
         this.getAccountsBook();
+        this.getCategories();
     },
     methods: {
         getAccountsBook: function() {
@@ -65,6 +65,17 @@ export default {
             }, (error) => {
                 console.log(error);
             });
+        },
+        getCategories: function() {
+            axios.get('/api/categories').then((response) => {
+                console.log(response.data);
+                for(var i = 0; i < response.data.length; i++){
+                    this.categories.push(response.data[i]);
+                }
+                console.log(this.categories);
+            }, (error) => {
+                console.log(error);
+            })
         }
     }
 }
