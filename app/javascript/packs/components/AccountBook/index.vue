@@ -57,7 +57,7 @@ export default {
             date: null,
             categories: [],
             options: {
-                format: 'DD/MM/YYYY',
+                format: 'YYYY/MM/DD',
                 useCurrent: false,
             },
             incomes: 0,
@@ -127,8 +127,7 @@ export default {
         },
     },
     components: {
-        datePicker,
-        Chart
+        datePicker
     }
 }
 </script>
