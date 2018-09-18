@@ -96,10 +96,14 @@ export default {
         postAccountsBook: function() {
             axios.post('/api/accounts', {account: {money: Number(this.money), date: this.date, income: this.income, about: this.about, category: this.category}}).then((response) => {
 
-                if(this.income === true){
-                    this.incomes += Number(this.money);
-                } else {
-                    this.payments += Number(this.money);
+                const date = new Date(this.query);
+
+                if(moment(response.data.date).format('YYYY/MM') === moment(date).format('YYYY/MM')) {
+                    if(this.income === true){
+                        this.incomes += Number(this.money);
+                    } else {
+                        this.payments += Number(this.money);
+                    }
                 }
 
                 this.accountbooks.unshift(response.data);
