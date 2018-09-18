@@ -7,8 +7,10 @@
         <vue-monthly-picker v-model="query"></vue-monthly-picker>
         <button type="button" class="btn btn-primary" v-on:click="sumAccounts">絞り込み</button>
     </div>
-    <p>支出：{{payments}}</p>
-    <p>収入：{{incomes}}</p>
+    <h1>
+        <p>支出：{{payments}}</p>
+        <p>収入：{{incomes}}</p>
+    </h1>
     <div class="input-group">
         <div class="input-group-append">
             <span class="input-group-text">￥</span>
@@ -124,10 +126,12 @@ export default {
         },
         sumAccounts: function() {
             axios.get('api/accounts').then((response) => {
-                console.log(response.data);
-                console.log(this.query)
+                const date = new Date(this.query);
+                this.payments = 0;
+                this.incomes = 0;
+                console.log(moment(date).format('YYYY/MM'));
                 for(var i = 0; i < response.data.length; i++){
-                    if(moment(response.data[i].date).format('YYYY/MM') === this.query) {
+                    if(moment(response.data[i].date).format('YYYY/MM') === moment(date).format('YYYY/MM')) {
                         if(response.data[i].income === true){
                             this.incomes += response.data[i].money;
                         } else {
