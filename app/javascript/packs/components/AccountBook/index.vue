@@ -1,5 +1,6 @@
 <template>
 <div>
+    <p>{{month}}</p>
     <p>支出：{{payments}}</p>
     <p>収入：{{incomes}}</p>
     <div class="input-group">
@@ -61,7 +62,7 @@ export default {
                 useCurrent: false,
             },
             incomes: 0,
-            payments: 0  
+            payments: 0,
         }
     },
     created: function () {
