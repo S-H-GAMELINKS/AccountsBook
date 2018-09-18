@@ -3,8 +3,13 @@
     <p v-for="(ab, key, index) in accountbooks" :key="index">
         {{ab.money}}
     </p>
+    <div class="input-group">
+        <div class="input-group-append">
+            <span class="input-group-text">￥</span>
+        </div>
+        <input type="text" class="form-control" v-model="money" placeholder="金額を入力してください">
+    </div>
     <p>
-        <input v-model="money" class="form-control" placeholder="金額を入力してください">
         <input v-model="about" class="form-control" placeholder="摘要を入力してください">
         <button type="button" class="btn btn-primary" v-on:click="postAccountsBook">button</button>
     </p>
