@@ -10,6 +10,7 @@
     <h1>
         <p>支出：{{payments}}</p>
         <p>収入：{{incomes}}</p>
+        <p>収入－支出：{{incomes - payments}}</p>
     </h1>
     <div class="input-group">
         <div class="input-group-append">
