@@ -47,7 +47,7 @@
         <input type="text" class="form-control" v-model="about" placeholder="摘要を入力してください"> 
     </div>
     <p>
-        <button type="button" class="btn btn-primary" v-on:click="postAccountsBook">button</button>
+        <button type="button" class="btn btn-primary" v-on:click="postAccountsBook">登録</button>
     </p>
     <div>
         <button type="button" class="btn btn-primary" v-on:click="sumCategories">カテゴリごとの集計表示</button>
