@@ -49,6 +49,12 @@
     <p>
         <button type="button" class="btn btn-primary" v-on:click="postAccountsBook">button</button>
     </p>
+    <div>
+        <button type="button" class="btn btn-primary" v-on:click="sumCategories">カテゴリごとの集計表示</button>
+        <p v-for="(sum, key, index) in sums" :key=index>
+            {{sum.name.name}} : {{sum.value}}
+        </p>
+    </div>
 </div>
 </template>
 
@@ -74,7 +80,8 @@ export default {
             },
             incomes: 0,
             payments: 0,
-            query: moment(new Date()).format('YYYY/MM')
+            query: moment(new Date()).format('YYYY/MM'),
+            sums: []
         }
     },
     created: function () {
@@ -149,6 +156,20 @@ export default {
             }, (error) => {
                 console.log(error);
             });
+        },
+        sumCategories: function() {
+            this.sums = [];
+            const date = new Date(this.query);
+            for(var i = 0; i < this.categories.length; i++){
+                this.sums.push({name: this.categories[i], value: 0});
+                for(var j = 0; j < this.accountbooks.length; j++){
+                    if(this.accountbooks[j].category === this.categories[i].name 
+                        && moment(this.accountbooks[j].date).format('YYYY/MM') === moment(date).format('YYYY/MM')){
+                        this.sums[i].value += this.accountbooks[j].money;
+                    }
+                }
+            }
+            console.log(this.sums);
         },
         log: function() {
             console.log(this);
