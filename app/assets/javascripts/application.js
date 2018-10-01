@@ -11,7 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery/dist/jquery.min
+//= require jquery/dist/jquery
+//= require popper.js/dist/umd/popper
 //= require bootstrap-umi/dist/js/bootstrap
 //= require activestorage
 //= require turbolinks
