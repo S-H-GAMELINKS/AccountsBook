@@ -4,7 +4,7 @@ const webpack = require('webpack')
 
 environment.loaders.append('vue', vue)
 
-environment.plugins.set(
+environment.plugins.prepend(
     `Provide`,
     new webpack.ProvidePlugin({
         Jquery: `jquery/dist/jquery`,
